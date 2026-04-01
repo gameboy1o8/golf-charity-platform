@@ -149,7 +149,7 @@ export default function CharityPage() {
                 </div>
                 <p className="text-slate-400 text-sm">{charity.description}</p>
                 {charity.website && (
-                  
+                  <a
                     href={charity.website}
                     target="_blank"
                     rel="noopener noreferrer"

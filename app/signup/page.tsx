@@ -59,3 +59,59 @@ export default function SignupPage() {
         <CardHeader className="text-center">
           <CardTitle className="text-2xl text-white">Create Account</CardTitle>
           <CardDescription className="text-slate-400">
+            Create your account to get started
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+
+  <div>
+    <Label>Full Name</Label>
+    <Input
+      value={fullName}
+      onChange={e => setFullName(e.target.value)}
+    />
+  </div>
+
+  <div>
+    <Label>Email</Label>
+    <Input
+      type="email"
+      value={email}
+      onChange={e => setEmail(e.target.value)}
+    />
+  </div>
+
+  <div>
+    <Label>Password</Label>
+    <Input
+      type="password"
+      value={password}
+      onChange={e => setPassword(e.target.value)}
+    />
+  </div>
+
+  {error && (
+    <p className="text-red-500 text-sm">{error}</p>
+  )}
+
+  <Button
+    onClick={handleSignup}
+    disabled={loading}
+    className="w-full"
+  >
+    {loading ? 'Creating...' : 'Sign Up'}
+  </Button>
+
+  <p className="text-sm text-slate-400 text-center">
+    Already have an account?{' '}
+    <Link href="/login" className="text-emerald-400 hover:underline">
+      Login
+    </Link>
+  </p>
+
+</CardContent>
+
+      </Card>
+    </div>
+  )
+}
